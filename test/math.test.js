@@ -1,6 +1,6 @@
-const math = require('../src/math');
+const math = require("../src/math");
 
-console.log("Testing add:");
+console.log("Testing add :");
 console.log(math.add(1, 2) === 3 ? "PASS" : "FAIL");
 
 console.log("Testing subtract:");
