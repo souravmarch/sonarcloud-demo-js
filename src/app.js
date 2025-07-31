@@ -1,14 +1,16 @@
-const math = require('./math');
-const secret = require('./secret');
+const network = require("./network");
+const fileHandler = require("./fileHandler");
+const logic = require("./logic");
+const http = require("http");
 
-console.log('Start calculations');
+network.fetchUnsecuredData();
+fileHandler.saveUserInput("notes.txt", "user content");
 
-const a = 5;
-const b = 0;
+logic.process1("hello").then(console.log);
 
-console.log(`Add: ${math.add(a, b)}`);
-console.log(`Subtract: ${math.subtract(a, b)}`);
-console.log(`Divide: ${math.divide(a, b)}`);
-
-const userInput = "console.log('This is unsafe')";
-math.evalUserInput(userInput); // ❌ Vulnerability triggered
+http
+  .createServer((req, res) => {
+    require("./cookie").setCookieInsecurely(res);
+    res.end("Cookie Set");
+  })
+  .listen(3000);
