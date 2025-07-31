@@ -1,0 +1,11 @@
+{
+  "name": "dummy-js-project",
+  "version": "1.0.0",
+  "description": "A JS project with intentional issues for SonarCloud analysis",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "node test/math.test.js"
+  },
+  "author": "You",
+  "license": "MIT"
+}
